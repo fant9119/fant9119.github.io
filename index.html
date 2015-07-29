@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>RK</title>
-
+	<link rel="shortcut icon" href="images/icon.png" type="image/png">
 	<link rel="stylesheet" id="contact-form-7-css" href="css/styles.css" type="text/css" media="all">
 	<link rel="stylesheet" id="juiz_last_tweet_widget-css" href="css/juiz_last_tweet.css" type="text/css" media="all">
 	<link rel="stylesheet" id="tag-groups-css-frontend-theme-1-css" href="css/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all">
@@ -36,6 +36,8 @@
 	<script type="text/javascript" src="scripts/jquery.ui.core.min.js"></script>
 	<script type="text/javascript" src="scripts/jquery.ui.widget.min.js"></script>
 	<script type="text/javascript" src="scripts/jquery.ui.tabs.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 	<style type="text/css"></style>
 	<style>
 		#getstarted {
@@ -43,13 +45,31 @@
 			  top: 90%;
 			  left: 75%;
 		}
+		.no-js #loader { display: none;  }
+	.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+	.se-pre-con {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		background: url('images/loading_animation.gif') center no-repeat #fff;
+	}
 	</style>
+	<script>
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+	</script>
 </head>
 
 <body>
+	<div class="se-pre-con"></div>
 	<div id="loading" class="loading" style="display: none;">
 		<div class="spinner-holder" style="display: none;">
-			<img src="images/image.jpg">
+			<img src="images/loading_animation">
 		</div>
 	</div>
 	
