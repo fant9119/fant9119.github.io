@@ -64,36 +64,24 @@ var App = {
     },
 
     videoSetup: function() {
-        var video = document.getElementById('landing-video'),
-            audio = document.getElementById('landing-audio');
+        var video = document.getElementById('landing-video');
 
+		var now = new Date();
+		var hour = now.getHours();
+		
+		if(hour > 11) {
+			video.setAttribute('src','video/2.mp4');
+		} else {
+			video.setAttribute('src','video/1.mp4');
+		} 
+		
         function checkLoad() {
             if (video.readyState === 4) {
                 video.play();
-
-                if ( App.getCookie('player') == 'play' ) {
-                    setTimeout(function() {
-                        audio.play();
-                    }, 100);                
-                }
             } else {
                 setTimeout(checkLoad, 100);
             }
         }
-
-        jQuery('.player.play').click( function(event) {
-            audio.play();
-            document.cookie="player=play";
-            jQuery('.player.play').removeClass('active').hide();
-            jQuery('.player.pause').addClass('active').show();
-        });
-
-        jQuery('.player.pause').click( function(event) {
-            audio.pause();
-            document.cookie="player=pause";
-            jQuery('.player.play').addClass('active').show();
-            jQuery('.player.pause').removeClass('active-client').hide();
-        });
 
         jQuery("#loading").fadeOut(500, function() {
             jQuery("#landing *, #block1 *, .blog").fadeIn(500, function() {

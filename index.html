@@ -9,13 +9,19 @@
 
     <title>RK</title>
 	<link rel="shortcut icon" href="images/icon.png" type="image/png">
-	<link rel="stylesheet" id="mikelporras-css" href="css/mikelporras.min.css" type="text/css" media="all">
 	<link rel="stylesheet" id="themeStyles-css" href="css/style.css" type="text/css" media="all">
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/functions.js"></script> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 	<style type="text/css">
+		body,html{
+			margin:0;padding:0;color:#FFF;
+		}
+
+		#landing{
+			display:table;width:100%;overflow:hidden;height:100%
+		}
 		#getstarted {
 			position: absolute;
 			  top: 90%;
@@ -35,7 +41,6 @@
 	</style>
 	<script>
 	$(window).load(function() {
-		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");;
 	});
 	</script>
@@ -43,11 +48,7 @@
 
 <body>
 	<div class="se-pre-con"></div>
-	<div id="loading" class="loading" style="display: none;">
-		<div class="spinner-holder" style="display: none;">
-			<img src="images/loading_animation.gif">
-		</div>
-	</div>
+	<div id="loading" class="loading" style="display: none;"></div>
 	
 	<div id="landing" class="section main-block" style="color: rgb(255, 255, 255); background: url(images/image.jpg)  no-repeat rgb(23, 29, 35);">
 		<video id="landing-video" preload="auto" loop="loop" muted="muted" poster="images/image.jpg">
