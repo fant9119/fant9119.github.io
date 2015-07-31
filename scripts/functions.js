@@ -88,24 +88,8 @@ var App = {
         }
 
         jQuery("#loading").fadeOut(500, function() {
-            jQuery("#landing *, #block1 *, .blog").fadeIn(500, function() {
-                var cookiePlayer = App.getCookie('player');
-
-                jQuery('#loading .spinner-holder').fadeOut(500);
-                jQuery("#loading").hide();
-
-                if ( video && !App.isMobile ) {
-                    if ( cookiePlayer.length == 0 || cookiePlayer == 'pause' ) {
-                        // jQuery('.player').removeClass('play').addClass('pause');
-                        jQuery('.player.play').addClass('active').show();
-                        jQuery('.player.pause').removeClass('active').hide();
-                    }
-                    
-                    checkLoad();
-                } else {
-                    jQuery('#header .player').hide();
-                }
-                jQuery('#header, #moveUp').fadeIn(500);
+            jQuery("#landing *").fadeIn(500, function() {
+                checkLoad();
             });
         });
     }
