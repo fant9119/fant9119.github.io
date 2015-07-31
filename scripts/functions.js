@@ -73,7 +73,7 @@ var App = {
 			video.setAttribute('src','video/morning/a ('+ (Math.floor(Math.random()*2) + 1)+').mp4');
 		} else if (hour >= 12 && hour < 17) {
 			video.setAttribute('src','video/day/a ('+ (Math.floor(Math.random()*4) + 1)+').mp4'); 
-		} else if (hour >= 17 && hour < 21) {
+		} else if(hour >= 17 && hour < 21) {
 			video.setAttribute('src','video/evening/a ('+ (Math.floor(Math.random()*6) + 1)+').mp4');
 		} else {
 			video.setAttribute('src','video/night/a (25).mp4');
