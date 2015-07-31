@@ -69,11 +69,15 @@ var App = {
 		var now = new Date();
 		var hour = now.getHours();
 		
-		if(hour > 11) {
-			video.setAttribute('src','video/2.mp4');
+		if(hour >= 6 && hour < 12) {
+			video.setAttribute('src','video/morning/a ('+ (Math.floor(Math.random()*2) + 1)+').mp4');
+		} else if (hour >= 12 && hour < 17) {
+			video.setAttribute('src','video/day/a ('+ (Math.floor(Math.random()*4) + 1)+').mp4'); 
+		} else if (hour >= 17 && hour < 21) {
+			video.setAttribute('src','video/evening/a ('+ (Math.floor(Math.random()*6) + 1)+').mp4');
 		} else {
-			video.setAttribute('src','video/1.mp4');
-		} 
+			video.setAttribute('src','video/night/a (25).mp4');
+		}
 		
         function checkLoad() {
             if (video.readyState === 4) {
