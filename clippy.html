@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RK</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="scripts/sounds-mp3.js" async="async" type="text/javascript"></script></head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/clippy.css" media="all">
+<body>
+
+	<script src="scripts/clippy.min.js"></script>
+
+	<script type="text/javascript">
+	var w = window.innerWidth;
+	var h = window.innerHeight;
+		clippy.load('Links', function(agent){
+			// do anything with the loaded agent
+			agent.show();
+			agent.play('Greeting');
+			agent.moveTo(w*0.5,h*0.5);
+			agent.speak('Sorry, but the site is still developing!');
+			agent.play('Explain');
+			// play a random animation
+			agent.animate();
+			agent.speak('But you can play with me by clicking two times on me :3');
+		});
+	</script>
+
+</body>
+</html>
