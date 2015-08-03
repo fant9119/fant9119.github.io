@@ -20,7 +20,7 @@ var App = {
         App.windowWidth = jQuery(window).width();
         App.windowHeight = jQuery(window).height();
 
-        jQuery('.main-block, .about-experience').each( function() {
+/*         jQuery('.main-block, .about-experience').each( function() {
             var block = jQuery(this);
 
             var img = new Image();
@@ -42,7 +42,7 @@ var App = {
 
                 block.css('background-size', bgSize);
             }();
-        });
+        }); */
 
         if ( App.windowWidth > 768 ) {
             jQuery('.central-button').hover(function(event) {
@@ -78,20 +78,17 @@ var App = {
 		} else {
 			video.setAttribute('src','video/night/a (25).mp4');
 		}
-		
-        function checkLoad() {
+			
+		checkLoad();
+				
+		function checkLoad() {
             if (video.readyState === 4) {
                 video.play();
+				$(".loader").fadeOut("slow");
             } else {
                 setTimeout(checkLoad, 100);
             }
         }
-
-        jQuery("#loading").fadeOut(500, function() {
-            jQuery("#landing *").fadeIn(500, function() {
-                checkLoad();
-            });
-        });
     }
 };
 
