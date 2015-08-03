@@ -20,7 +20,7 @@ var App = {
         App.windowWidth = jQuery(window).width();
         App.windowHeight = jQuery(window).height();
 
-/*         jQuery('.main-block, .about-experience').each( function() {
+        jQuery('.main-block').each( function() {
             var block = jQuery(this);
 
             var img = new Image();
@@ -42,7 +42,7 @@ var App = {
 
                 block.css('background-size', bgSize);
             }();
-        }); */
+        }); 
 
         if ( App.windowWidth > 768 ) {
             jQuery('.central-button').hover(function(event) {
