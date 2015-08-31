@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RK</title>
+	<link rel="shortcut icon" href="images/icon.png" type="image/png">
+
+	<link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" id="font_awesome-css" href="font-awesome-4.4.0/css/font-awesome.min.css" type="text/css" media="all">
+	<link rel="stylesheet" id="themeStyles-css" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" id="scrollCss-css" href="css/scroll.css" type="text/css" media="all">
+	<link rel="stylesheet" id="scrollTransformCss-css" href="css/scroll-transform.css" type="text/css" media="all">
+	<link rel="stylesheet" type="text/css" href="scripts/helper/build/clippy.css" media="all">
+	
+	<link href="http://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/functions.js"></script>
+	<script type="text/javascript" src="scripts/scroll-transform.js"></script>
+	<script type="text/javascript" src="scripts/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="scripts/modernizr-2.6.1.js"></script> 
+	<script type="text/javascript" src="scripts/jquery.burn.js"></script>
+	<script type="text/javascript" src="scripts/helper/build/clippy.min.js"</script>
+	<script type="text/javascript" src="scripts/helper/build/clippy.js"</script>
+	
+		<style>
+		html,body {
+			height: 100%;
+			width: 100%;
+			margin: 0px 0px 0px 0px;
+		}
+		html::-webkit-scrollbar { 
+			display: none; 
+		}
+		body::-webkit-scrollbar { 
+			display: none; 
+		}
+		h1 {
+			text-align: center;
+			margin: 5px;
+		}
+		#arrow {
+			border: 1px solid transparent;
+			width: 103px;
+		}
+		.helpers {
+			height: 60%;
+			width: 100%;
+		}
+		.helper {
+			position: relative;
+			display: inline-block;
+			border: 1px solid #FFF;
+			height: 100%;
+			width: 8%;
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		.helper:hover {
+			border: 1px solid red;
+		}
+		
+		.showHelpers {
+			padding-top: 50px;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin: 0px;
+			height: 30%;
+			width: 100%;
+			position: absolute;
+			left: calc(-80% - 21px);
+			transition: 0.5s;
+			z-index: 0;
+		}
+		
+		.showHelpers:hover {
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="loader"></div>
+	
+	<nav style="color: rgb(0, 0, 0); margin-top: -144px;">
+		<ul></ul> 
+	</nav>
+
+	<header>
+		<i class="fa fa-graduation-cap"></i>
+	</header>
+
+	<div id="certificates" style="color: rgb(255, 255, 255); background: url(images/frames1.jpg)  no-repeat rgb(255, 255, 255); background-size: cover;">
+		<div class="close"></div>
+	</div>
+
+	<div id="container">
+	
+		<div id="landing" class="section main-block" style="color: rgb(255, 255, 255); background: url(images/java_junior_background.jpg) no-repeat rgb(255, 255, 255);">
+			<div class="landing-header">
+				<h1 class="burning">Roman Kutsenko</h1>
+				<h2 class="burning">Java Junior Developer</h2>
+			</div>
+		</div>
+
+		<div id="aboutInformation" class="section main-block" style="color: rgb(23, 29, 35)">
+			<div style="height: 10px"></div>
+			<div class="informationAboutMe">
+				<div id="letter">
+					<div id="photo">
+						<figure>
+							<img src="images/avatar.jpg" id="avatar">
+							my photo
+						</figure>
+	                </div>
+					<i class="fa fa-paperclip"></i>
+
+					<div id="text">
+						<div id="title">Hello!</div>
+					
+						<p style="width: calc(100% - 146px)">	
+							My name is Roman. ... <br>
+							Here must be a text about me and about the beginning of my IT-Career =)
+							The text will be written by my beloved girlfriend the sweetest and the
+							most charming Anna.<br><br>
+							P.S. I hope...<br>
+						</p>
+
+						<p>	
+							
+						</p>
+
+						<p>	
+							
+						</p>
+					
+						<p>	
+							
+						</p>
+					
+						<p>	
+							
+						</p>
+
+						
+					</div>
+					<button onclick=Scroll.scrollToSlide(2)>Skills</button>
+				</div>
+			</div>	
+		</div>
+		
+		<div id="slideshow" class="section main-block" style="color: rgb(255, 255, 255); background-image: url(images/1.jpg); background-size: 100vw;">
+			<img src="images/b1.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">
+			<img src="images/b2.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">	
+			<img src="images/b3.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">
+			<img src="images/b4.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">	
+			<img src="images/b5.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">
+			<img src="images/b6.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">	
+		</div>
+	
+		<div id="allHelpers" class="section main-block" style="color: rgb(23, 29, 35); background-color: #FFFFFF;">
+			<div class="showHelpers">
+				<h1>Choose your helper:</h1>
+				<div class="helpers">
+					<div class="helper" onclick="chooseBonzi()" style="background-image: url('images/helpers/Bonzi.png')"></div>
+					<div class="helper" onclick="chooseClippy()" style="background-image: url('images/helpers/Clippy.png')"></div>
+					<div class="helper" onclick="chooseF1()" style="background-image: url('images/helpers/F1.png')"></div>
+					<div class="helper" onclick="chooseGenie()" style="background-image: url('images/helpers/Genie.png')"></div>
+					<div class="helper" onclick="chooseGenius()" style="background-image: url('images/helpers/Genius.png')"></div>
+					<div class="helper" onclick="chooseLinks()" style="background-image: url('images/helpers/Links.png')"></div>
+					<div class="helper" onclick="chooseMerlin()" style="background-image: url('images/helpers/Merlin.png')"></div>
+					<div class="helper" onclick="choosePeedy()" style="background-image: url('images/helpers/Peedy.png')"></div>
+					<div class="helper" onclick="chooseRocky()" style="background-image: url('images/helpers/Rocky.png')"></div>
+					<div class="helper" onclick="chooseRover()" style="background-image: url('images/helpers/Rover.png')"></div>
+					<div id="arrow" class="helper" style="background-image: url('images/show.png')"></div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				var helper;
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				
+				function chooseBonzi() {
+					helper = 'Bonzi';
+					helperLoad(helper);
+				}
+				
+				function chooseClippy() {
+					helper = 'Clippy';
+					helperLoad(helper);
+				}
+				
+				function chooseF1() {
+					helper = 'F1';
+					helperLoad(helper);
+				}
+				
+				function chooseGenie() {
+					helper = 'Genie';
+					helperLoad(helper);
+				}
+				
+				function chooseGenius() {
+					helper = 'Genius';
+					helperLoad(helper);
+				}
+				
+				function chooseLinks() {
+					helper = 'Links';
+					helperLoad(helper);
+				}
+				
+				function chooseMerlin() {
+					helper = 'Merlin';
+					helperLoad(helper);
+				}
+				
+				function choosePeedy() {
+					helper = 'Peedy';
+					helperLoad(helper);
+				}
+				
+				function chooseRocky() {
+					helper = 'Rocky';
+					helperLoad(helper);
+				}
+				
+				function chooseRover() {
+					helper = 'Rover';
+					helperLoad(helper);
+				}
+				
+				function helperLoad(helper) {
+
+					$('.clippy').remove();
+					$('.clippy-balloon').remove();
+					
+					clippy.load(helper, function(agent){
+						agent.show();
+						agent.play('Greeting');
+						agent.moveTo(w*0.5, h*0.5);
+						agent.speak('Sorry, but the site is under construction! Some functions can work wrong.');
+						agent.play('Explain');
+						agent.animate();
+					});
+				}
+			</script> 
+		</div>
+		<div id="case381" class="section main-block" style="color: rgb(23, 29, 35); background-image: url(images/3.jpg); background-size: 100vw;">
+				
+		</div>  
+
+		<div id="footer" class="section main-block main-footer" style="color: rgb(255, 255, 255); background: url(images/1.jpg)  no-repeat rgb(0, 0, 0);">
+			<div id="chooseHelperMenu">
+			
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			$('#slideshow').cycle({
+				fx: 'fade',
+				pager: '#smallnav', 
+				pause:   1, 
+				speed: 1800,
+				timeout:  3500 
+			});			
+		});
+	</script>
+
+</body>

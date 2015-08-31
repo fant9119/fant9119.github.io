@@ -5,15 +5,43 @@ var App = {
     windowHeight: jQuery(window).height(),
     isMobile: null,
 
-    getCookie: function(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1);
-            if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
-        }
-        return "";
+    actions: function() {
+        jQuery('header .fa-graduation-cap').click(App.menuOpen);
+        jQuery('#certificates .close').click(App.menuClose);
+    },
+
+    menuClose: function() {
+        topMenuHeight = '-100vh';
+
+        jQuery('#certificates').animate({ 
+            top: topMenuHeight
+        }, { 
+            queue: false, 
+            duration: App.animationTime,
+            complete: function() { 
+				jQuery('header .fa-graduation-cap').show();
+                if ( App.windowWidth > 1024 && !App.isMobile ) {
+                    jQuery('nav').show();
+                } 
+            }
+        });
+    },
+
+    menuOpen: function() {
+        jQuery('html').css('overflow', 'hidden');
+        jQuery('header .fa, nav').hide();
+
+        jQuery('#certificates').animate({ 
+            top: '0' 
+        }, { 
+            queue: false, 
+            duration: App.animationTime,
+            complete: function() { 
+                    jQuery('#certificates').on(Scroll.mousewheel, function(event) {
+                        event.stopPropagation();
+                    });
+            }
+        });
     },
 
     resizeElements: function() {
@@ -42,8 +70,8 @@ var App = {
 
                 block.css('background-size', bgSize);
             }();
-        }); 
-
+        });
+/* 
         if ( App.windowWidth > 768 ) {
             jQuery('.central-button').hover(function(event) {
                 var self = jQuery(this);
@@ -60,43 +88,56 @@ var App = {
             });
         } else {
             jQuery('.central-button').unbind('mouseenter mouseleave');
-        }
+        } */
     },
 
-    videoSetup: function() {
-        var video = document.getElementById('landing-video');
+    /* resizeInput: function(inputField) {
+        var width = inputField.val().length;
+        if ( width == 0 ) {
+            width = inputField.attr('placeholder').length;
+        } 
+        inputField.css('width', width * 10 + 'px');
+    }, */
 
-		var now = new Date();
-		var hour = now.getHours();
-		
-		if(hour >= 6 && hour < 12) {
-			video.setAttribute('src','video/morning/a ('+ (Math.floor(Math.random()*2) + 1)+').mp4');
-		} else if (hour >= 12 && hour < 17) {
-			video.setAttribute('src','video/day/a ('+ (Math.floor(Math.random()*4) + 1)+').mp4'); 
-		} else if(hour >= 17 && hour < 21) {
-			video.setAttribute('src','video/evening/a ('+ (Math.floor(Math.random()*6) + 1)+').mp4');
-		} else {
-			video.setAttribute('src','video/night/a (25).mp4');
-		}
-			
-		checkLoad();
-				
-		function checkLoad() {
-            if (video.readyState === 4) {
-                video.play();
-				$(".loader").fadeOut("slow");
-            } else {
-                setTimeout(checkLoad, 100);
+    /* titleResize: function() {
+        jQuery('.case-to-top').each(function(){
+            var 
+                self = jQuery(this),
+                title = self.find('.title'),
+                width = title.outerWidth(true) + 10,
+                height = title.height();
+
+            self.find('.svg-title').attr('width', width);
+            // if(navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
+            if(navigator.userAgent.match(/(iPhone|iPod)/g)) {
+                self.find('.svg-title').attr('height', height);
             }
+
+        });
+
+        if(/(?:iOS|Android)/.test(navigator.userAgent)) {
+        //     if(navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
+        //         jQuery('mask text').attr('dy', '20%');
+        //     } else {
+                jQuery('mask text').attr('dy', '40%');
+        //     }
         }
+    },
+ */
+    loadingSetup: function() {
+		jQuery('.burning').burn();
+		jQuery(document).ready(function() {
+			jQuery("#loader").fadeOut("slow")
+		});
     }
+
 };
-
-
 
 jQuery(window).resize(function() {
     App.windowWidth = jQuery(window).width();
     App.windowHeight = jQuery(window).height();
+
+  //  App.titleResize();
     App.resizeElements();
 });
 
@@ -105,7 +146,9 @@ jQuery(window).load(function() {
     App.windowWidth = jQuery(window).width();
     App.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    App.videoSetup();
+    App.actions();
+    App.loadingSetup();
     App.resizeElements();
+  //  App.titleResize();
 });
 
