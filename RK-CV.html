@@ -26,6 +26,14 @@
 	<script type="text/javascript" src="scripts/helper/build/clippy.min.js"></script>
 	
 		<style>
+	
+		#skills img {
+			position: absolute;
+			display: none;
+		}
+
+		
+		
 		html,body {
 			height: 100%;
 			width: 100%;
@@ -80,6 +88,58 @@
 			left: 0px;
 		}
 	</style>
+	<script>
+		var height = jQuery(window).height();
+		var width = jQuery(window).width();
+		var imageHeight, imageWidth;
+		
+		$('#skills').scroll(function() {
+		   addPictures();
+		});		
+			
+		function addPictures() {
+			Scroll.scrollToSlide(2);
+			var top = 0;
+			var left = 0;
+			for(var i = 1; i < 18; i++) {
+				jQuery('#skills').append('<img id=\"'+ i +'\" src=\"images/skill (' + i + ').png\"></img>');	
+			}
+
+			left = 0;
+			for (var i = 1; i < 18; i++) {
+				var img = jQuery('#' + i);
+				
+				if (left + 250 < width && top - 150 < 0) {
+					
+					img.css('top', top + 'px');
+					img.css('left', left +'px');
+					left = left + 150;
+				} else if (top + 150 > height && left - 150 > 0) {
+					left = left - 150;
+					img.css('top', top + 'px');
+					img.css('left', left +'px');
+				} else if (left - 250 < 0) {
+					top = top - 150;
+					img.css('top', top + 'px');
+					img.css('left', left +'px');
+				} else {
+					top = top + 150;
+					img.css('top', top + 'px');
+					img.css('left', left +'px');
+				}		
+			}
+			show();
+		}
+			
+		function show() {
+			$('#skills img').each(function(i) {
+			$(this).delay((i++) * 500).fadeTo(500, 1); })
+		};
+			
+
+
+			
+	</script>	
 </head>
 <body>
 	<div id="loader"></div>
@@ -106,7 +166,7 @@
 		</div>
 
 		<div id="aboutInformation" class="section main-block" style="color: rgb(23, 29, 35)">
-			<div style="height: 10px"></div>
+			<div style="height: 20px"></div>
 			<div class="informationAboutMe">
 				<div id="letter">
 					<div id="photo">
@@ -146,17 +206,55 @@
 
 						
 					</div>
-					<button onclick=Scroll.scrollToSlide(2)>Skills</button>
+					<button onclick=addPictures()>Skills</button>
 				</div>
 			</div>	
 		</div>
 		
+
+		
+		<div id="skills" class="section main-block" style="color: rgb(23, 29, 35)">
+			<div style="height: 100px"></div> 
+			<div class="informationAboutMe">
+				<div id="letter">
+				
+					<div id="text">
+						<div id="title">Skills</div>
+					
+						<p>	
+							My name is Roman. ... <br>
+							Here must be a text about me and about the beginning of my IT-Career =)
+							The text will be written by my beloved girlfriend the sweetest and the
+							most charming Anna.<br><br>
+							P.S. I hope...<br>
+						</p>
+
+						<p>	
+							
+						</p>
+
+						<p>	
+							
+						</p>
+					
+						<p>	
+							
+						</p>
+					
+	
+						
+					</div>
+					
+				</div>
+			</div>
+		</div> 
+		
 		<div id="slideshow" class="section main-block" style="color: rgb(255, 255, 255); background-image: url(images/1.jpg); background-size: 100vw;">
-			<img src="images/b1.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">
-			<img src="images/b2.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">	
-			<img src="images/b3.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">
-			<img src="images/b4.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">	
-			<img src="images/b5.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0; width: 100%">
+			<img src="images/b1.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0.5; width: 100%">
+			<img src="images/b2.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0.5; width: 100%">	
+			<img src="images/b3.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0.5; width: 100%">
+			<img src="images/b4.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0.5; width: 100%">	
+			<img src="images/b5.jpg" class="bgM" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0.5; width: 100%">
 		</div>
 	
 		<div id="allHelpers" class="section main-block" style="color: rgb(23, 29, 35); background-color: #FFFFFF;">
@@ -232,8 +330,8 @@
 				}
 				
 				function helperLoad(helper) {
-
 					$('.clippy').remove();
+					
 					$('.clippy-balloon').remove();
 					
 					clippy.load(helper, function(agent){
@@ -244,12 +342,18 @@
 						agent.play('Explain');
 						agent.animate();
 					});
+					//$('.clippy').draggable();
+			
+					$('.clippy').setAttribute("draggable", "true");
+					$('.clippy').ondragend = function(){
+						if ($('.clippy').top < 0) {
+							$('.clippy').remove();
+						}
+					};
 				}
 			</script> 
 		</div>
-		<div id="case381" class="section main-block" style="color: rgb(23, 29, 35); background-image: url(images/3.jpg); background-size: 100vw;">
-				
-		</div>  
+		 
 
 		<div id="footer" class="section main-block main-footer" style="color: rgb(255, 255, 255); background: url(images/1.jpg)  no-repeat rgb(0, 0, 0);">
 			<div id="chooseHelperMenu">
