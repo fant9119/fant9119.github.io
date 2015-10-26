@@ -1,43 +1,170 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RK</title>
+	
+	<link rel="shortcut icon" href="resources/images/icon.png" type="image/png">
+	<link rel="stylesheet" id="main-css"  href="css/main.css" type="text/css" media="all"/>
+	<link rel="stylesheet" id="scroll-css"  href="css/scroll_transformation.css" type="text/css" media="all"/>
+	<link rel="stylesheet" id="nav-css"  href="css/navigation.css" type="text/css" media="all"/>
+	<link rel="stylesheet" id="font_awesome-css" href="css/font-awesome-4.4.0/css/font-awesome.min.css" type="text/css" media="all">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css">  -->
+	
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/scroll_transformation.js"></script>
+	<script type="text/javascript" src="js/jquery.burn.js"></script>
 
-    <title>RK</title>
-	
-	<link rel="shortcut icon" href="images/icon.png" type="image/png">
-	
-	<link rel="stylesheet" id="themeStyles-css" href="css/style.css" type="text/css" media="all">
-	
-	<script src="scripts/jquery.js" type="text/javascript"></script>
-	<script src="scripts/modernizr-2.6.1.js" type="text/javascript"></script>
-	
-	<script src="scripts/functionsIndex.js"></script>  
 </head>
-
 <body>
-	<div id="loader"></div>
-	
-	<div id="landing" class="section main-block" style="background: url('images/image.jpg')">
-		<video id="landing-video" preload="auto" loop="loop" muted="muted">
-			If You see this text, it means that You have a very bad browser =(
-		</video>
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
 	</div>
+	
+	<nav style="color: rgb(0, 0, 0); margin-top: -144px;">
+		<ul></ul>
+	</nav>
+	
+	<div id='contact-menu-toggle' class='contact-menu-toggle' style="cursor: pointer;">
+		<span class='bar bar-1'></span>
+		<span class='bar bar-2'></span>
+		<span class='bar bar-3'></span>
+	</div>
+	
+	<div id="contact-left-menu">
+		<div class="logo">
+			<a href="http://fant9119.github.io">RK</a>
+		</div>
+		<div class="contact-left-part-container">
+			<div class="contact-left-part">
+				<a href="mailto:fant9119@gmail.com">
+					<div class="contact-button" title="Send me e-mail">
+						Contact me	        
+					</div>
+				</a>
+			</div>
+		</div> 
+	</div>
+	<div id="contact-right-menu">
+		<div class="sitemap">
+			<ul class="site-menu">
+				<li class="menu-item">
+					<ul class="menu-case-contacts">
+						<li class="menu-item">
+							<a href="tel: 380937465319" title="My mobile phone">
+								+380937465319                    
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="mailto:fant9119@gmail.com" title="My e-mail">
+								fant9119@gmail.com                    
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-item">
+					<a href="http://fant9119.github.io" >
+						Home            
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" onclick = "Scroll.scrollToSlide(0), App.menuClose()">
+						Title                    
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" onclick = "Scroll.scrollToSlide(1), App.menuClose()">
+						About                    
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" onclick = "Scroll.scrollToSlide(2), App.menuClose()">
+						Skills                  
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" onclick = "Scroll.scrollToSlide(3), App.menuClose()">
+						Other                    
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" onclick = "Scroll.scrollToSlide(4), App.menuClose()">
+						Contacts                   
+					</a>
+				</li>
+			</ul>
+						
+			<ul class="social-icons">
+				<li class="social-icon">
+					<a href="https://www.facebook.com/profile.php?id=100006826474791" target="_blank" title="Facebook">
+						<i class="fa fa-facebook-official"></i>
+					</a>
+				</li>
+				<li class="social-icon">
+					<a href="skype:fantom_9119@mail.ru?chat" target="_blank" title="Skype">
+						<i class="fa fa-skype"></i>
+					</a>
+				</li>
+				<li class="social-icon">
+					<a href="https://github.com/fant9119" target="_blank" title="Github">
+						<i class="fa fa-github-square"></i>
+					</a>
+				</li>
+			</ul>		
+		</div>
+	</div>
+	
+	<div id="content">
+		<div id="title" class="section main-block color_ffffff" style="color: rgb(255, 255, 255); background: url(resources/images/b1.jpg) no-repeat rgb(255, 255, 255); background-size: cover;">
+			<div class="title-header">
+				<h1 class="burning">Roman Kutsenko</h1>
+				<h2 class="burning">Junior Java Developer</h2>
+			</div>
+		</div>
 		
-	<div class="overlay" style="background: #FFFFFF; opacity: 0.2"></div>
-		
-	<div id="getstarted">
-		<div>
-			<a href="./RK-CV.html" onclick="App.landingHide()">
-				<div class="central-button" style="background: rgba(255, 255, 255, 0.298039);">
-					<div class="overlay" style="color: rgb(0, 0, 0); height: 0px; background: rgb(255, 255, 255);">Let's be Friends =)</div>
-							get started
+		<div id="about" class="section main-block color_171d23" style="color: rgb(23, 29, 35);">
+			<div id="certificates">
+				<i class="fa fa-graduation-cap"></i>
+			</div>
+			<div id="letter">
+				<div id="photo">
+					<figure>
+						<img id="avatar" src="resources/images/avatar.jpg">
+						my photo
+					</figure>
+	            </div>
+				<i class="fa fa-paperclip"></i>
+
+				<div id="text">
+					<div id="title">Hello!</div>
+					
+					<p style="width: calc(100% - 146px)">	
+							My name is Roman. ... <br>
+							Here must be a text about me and about the beginning of my IT-Career =)
+							The text will be written by my beloved girlfriend the sweetest and the
+							most charming Anna.<br><br>
+							P.S. I hope...<br>
+					</p>
+						
 				</div>
-			</a>
+				<div id="download-button" onclick=Scroll.scrollToSlide(2)>Skills</div>
+			</div>
+		</div>
+		
+		<div id="skills" class="section main-block color_ffffff" style="color: rgb(255, 255, 255); background: url(resources/images/2.jpg) no-repeat rgb(255, 255, 255); background-size: cover;">
+			
+		</div>
+		
+		<div id="entertainment" class="section main-block color_171d23" style="color: rgb(255, 255, 255); background: url(resources/images/1.jpg) no-repeat rgb(255, 255, 255); background-size: cover;">
+		</div>
+		
+		<div id="contact" class="section main-block color_ffffff" style="color: rgb(255, 255, 255); background: url(resources/images/2.jpg) no-repeat rgb(255, 255, 255);">
+			<video id="video" preload="auto" loop="loop" muted="muted">
+				If You see this text, it means that You have a very bad browser =(
+			</video>
+			<h1>CONTACTS</h1>
 		</div>
 	</div>
 </body>
