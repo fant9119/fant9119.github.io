@@ -70,7 +70,7 @@ var App = {
     },
 	
 	videoSetup: function() {
-        var video = document.getElementById('video');
+        var video = document.getElementById('sky-video');
 
 		var now = new Date();
 		var hour = now.getHours();
