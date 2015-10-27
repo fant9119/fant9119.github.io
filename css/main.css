@@ -95,7 +95,7 @@ a:visited {
 html {
     height: 100%;
     width: 100%;
-	/* font-family: 'Nothing You Could Do'; */
+	font-family: 'Nothing You Could Do'; 
 }
 
 html::-webkit-scrollbar {
@@ -371,13 +371,13 @@ ul {
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
     /*font-family: 'RobotoRegular';*/
-    font-family: 'Myriad Set Pro';
+    /* font-family: 'Myriad Set Pro'; */
     font-size: 14px;
 }
 
 .contact-button:hover {
     background-position: 0, 0;
-    color: #000000;
+    color: #000f55;
 }
 
 .contact-left-part {
@@ -386,6 +386,31 @@ ul {
     vertical-align: middle;
     padding-left: 3vw;
     bottom: 15vh;
+}
+
+.download-button {
+	background: transparent;
+	border: 4px solid #af111c;
+	border-radius: 5px;
+	color: #af111c;
+	cursor: pointer;
+	font-family: 'Nothing You Could Do';
+	font-size: 130%;
+	padding: 0.2em 1.5em;
+	display: block;
+	width: 80pt;
+	font-weight: 900;
+    height: 40px;
+    line-height: 40px;
+    margin: 3px auto;
+    position: relative;
+    text-align: center;
+}
+
+.download-button:hover {
+	-webkit-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	transform: rotate(-5deg);
 }
 
 .fa-graduation-cap {
@@ -422,10 +447,10 @@ ul {
 	padding-bottom: 2em;
 	max-height: 670px;
 	max-width: 926px;
-	min-width: 590px;
+	min-width: 590px; 
 	position: relative;
 	text-align: start;
-	font-weight: 100;
+	font-weight: 900;
 	font-size: 19px;
 	z-index: 2;
 }
@@ -483,6 +508,18 @@ ul {
 .no-js #loader-wrapper {
         display: none;
 }
+
+.overlay {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    min-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%; 
+}
 	
 .sitemap .social-icon {
     text-align: right;
@@ -502,8 +539,8 @@ ul {
 	border: 0;
 	margin-left: 2px;
 	margin-right: 2px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 2%;
+	padding-right: 2%;
 	padding-top: 7px;
 	padding-bottom: 12.5px
 }
@@ -514,7 +551,6 @@ ul {
 } 
 
 .title-header {
-	font-family: 'Nothing You Could Do';
     margin: 0 21.5%;
     position: absolute; 
     text-align: center;
@@ -528,18 +564,15 @@ ul {
 .title-header h1 {
 	font-family: 'Nothing You Could Do';
     font-size: 65px;
-    font-weight: 500;
+    font-weight: 900;
     margin: 10px 0 5px;
-}
-
-.title-header h1,
-.title-header h2 {
-    text-align: center;
+	text-align: center;
 }
 
 .title-header h2 {
 	font-family: 'Nothing You Could Do';
     margin: 0;
+	text-align: center;
 }
 
 .title-header h2:last-of-type {
@@ -813,11 +846,12 @@ body.contact-menu-on .contact-menu-toggle .bar {
     }
 
     .menu-item a {
-        color: #FFFFFF;
+        color: #000F55;
+		font-weight: 900;
     }
 
     .menu-case-contacts .menu-item a {
-        color: #ff6432;
+        color: #ffffff;
     }
 
     .contact-menu-toggle {
@@ -877,7 +911,7 @@ body.contact-menu-on .contact-menu-toggle .bar {
 	
     .sitemap .social-icon a {
         font-size: 30px;
-		color: #FFFFFF
+		color: #000F55
     }
 
     .social-icon {
@@ -1196,6 +1230,8 @@ body.contact-menu-on .contact-menu-toggle .bar {
         -o-transition-duration: 0.7s;
         -ms-transition-duration: 0.7s;
     background-color: rgba(28, 28, 26, 1);
+	background-image: url(../resources/images/right-menu-2.jpg);
+	background-size: cover;
     position: fixed;
     height: 100%;
     top: 0;
@@ -1205,7 +1241,7 @@ body.contact-menu-on .contact-menu-toggle .bar {
     padding: 0 3vw;
 }
 
-nav/*, .menu-toggle*/ {
+nav, #contact-menu-toggle {
     transition-timing-function: linear;
     transition-duration: 0.7s;
         -webkit-transition-duration: 0.7s;
